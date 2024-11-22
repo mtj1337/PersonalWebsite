@@ -1,0 +1,101 @@
+/* Dracula Theme */
+:root {
+  --background: #282a36;
+  --foreground: #f8f8f2;
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --purple: #bd93f9;
+}
+
+html, body {
+  height: 100%; /* Ensure full height */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Disable scrolling */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh; /* Full viewport height */
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.button {
+  color: var(--cyan); /* Bright cyan text color to match the Dracula theme */
+  font-size: inherit; /* Inherit the font size from surrounding text */
+  text-decoration: none; /* Remove underline */
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove padding */
+  display: inline; /* Make sure the link is inline with the text */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+  border-bottom: 2px solid transparent; /* Add a subtle border for hover effect */
+}
+
+.button:hover {
+  color: var(--green); /* Change color to green when hovered */
+  border-bottom: 2px solid var(--green); /* Highlight with a green border on hover */
+}
+
+.button:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1; /* Ensure the main content takes up all available space */
+}
+
+/* Targeting the typing effect element */
+#typingText {
+  font-size: 1.2rem; /* Adjust font size */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+#typingText::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: var(--cyan);
+  position: absolute;
+  top: 0;
+  right: 0;
+  animation: blink 0.7s steps(2) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem; /* Smaller footer text */
+  color: var(--foreground);
+  margin-top: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+}
